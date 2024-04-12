@@ -134,13 +134,13 @@ input[type="submit"]:hover {
 }
 
 
-/* Добавляем отступы для карточки */
+/* Добавляем тени для карточки */
 .card {
     max-width: 400px;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Стили для заголовка формы */
@@ -158,3 +158,5 @@ input[type="submit"]:hover {
     width: 100%;
     margin-top: 15px;
 }
+
+
