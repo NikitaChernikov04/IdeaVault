@@ -12,19 +12,24 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <form method="post" action="">
-            {{ form.hidden_tag() }}
-            <div class="mb-3">
-                {{ form.email.label(class="form-label") }}
-                {{ form.email(class="form-control", placeholder="Email") }}
-            </div>
-            <div class="mb-3">
-                {{ form.password.label(class="form-label") }}
-                {{ form.password(class="form-control", placeholder="Password") }}
-            </div>
-            <button type="submit" class="btn btn-primary">Войти</button>
-            <a href="/reset"><button type="button" class="btn btn-primary">Восстановить пароль</button></a>
-        </form>
-    </div>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Вход в профиль</h5>
+            <form method="post" action="">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-control", placeholder="Email") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.password.label(class="form-label") }}
+                    {{ form.password(class="form-control", placeholder="Password") }}
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+                <a href="/reset"><button type="button" class="btn btn-primary">Восстановить пароль</button></a>
+            </form>
+        </div>
+    </div>    
+</div>
 {% endblock %}
