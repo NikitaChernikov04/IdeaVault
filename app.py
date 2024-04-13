@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
-from forms import RegistrationForm, LoginForm, ResetPasswordForm
+from forms import RegistrationForm, LoginForm, ResetPasswordForm, IdeaForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'my_secret_key_here'
@@ -50,6 +50,27 @@ def reset():
     if form.validate_on_submit():
         return f"Email: {form.email.data} - Запрос на восстановление пароля отправлен"
     return render_template('reset_pass.html', form=form)
+
+
+@app.route('/search_card')
+def search_card():
+    # Ваша логика для получения данных о карточках
+    card = {
+        'image_url': '/path/to/image.jpg',
+        'title': 'Card Title',
+        'content': 'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
+    }
+    return render_template('search_card.html', card=card)
+
+
+@app.route('/create', methods=['GET', 'POST'])
+def create_idea():
+    form = IdeaForm()
+    if form.validate_on_submit():
+        # Действия при успешном сохранении идеи
+        flash('Idea created successfully!', 'success')
+        return redirect(url_for('create_idea'))
+    return render_template('card_form.html', form=form)
 
 
 if __name__ == '__main__':
