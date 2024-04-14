@@ -1,3 +1,27 @@
 {% extends 'base.html' %}
 
 {% block title %}Восстановление пароля{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Восстановление пароля</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card-body">
+        <div class="card-title">
+        <form method="post" action="">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control", placeholder="Email") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Восстановить пароль</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

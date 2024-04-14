@@ -1,14 +1,27 @@
+.example {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #fff;
 }
 
+
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #333;
     color: #fff;
     padding: 10px 50px;
+
 }
 
 nav ul {
@@ -39,17 +52,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-.registration-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding-top: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
 }
 
 input[type="text"],
@@ -95,11 +97,88 @@ input[type="submit"]:hover {
     display: inline-block;
 }
 
-.button:hover {
-    background-color: #555;
-}
-
 .regsuccess {
     text-decoration: none;
     
 }
+
+
+.buttons .btn-secondary {
+    background-color: #6c757d;
+}
+
+.social a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #343a40;
+    transition: transform 0.3s ease;
+}
+
+.social a:hover img {
+    transform: scale(1.1);
+}
+
+/* Стили для анимации */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Добавляем тени для карточки */
+.card-body {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.801), 0 10px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(39,255,0, 0);
+    transform: translate3d(0px, 100px, 0) scale(1);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    backdrop-filter: blur(30px);
+}
+
+
+/* Стили для заголовка формы */
+.card-title {
+    margin-bottom: 20px;
+}
+
+/* Стили для полей ввода и меток */
+.form-label {
+    font-weight: bold;
+}
+
+/* Стили для кнопки */
+.btn-primary {
+    width: 100%;
+    margin-top: 15px;
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Помещаем видео за всё содержимое страницы */
+    object-fit: cover; /* Заполняем область видео всем доступным пространством */
+    filter: blur(5px);
+}
+
+
+
+
+
+
+

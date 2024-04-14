@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}All Cards{% endblock %}
+
+{% block heading %}All Cards{% endblock %}
+
+{% block styles %}
+    <!-- Подключаем наши собственные стили -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css\done_card.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-3 mb-4">All Cards</h1>
+
+        <div class="card-body">
+            <img src="{{ card.image_url }}" class="card-img-left" alt="Card Image">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.content }}</p>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-link like-button"><i class="fas fa-heart"></i></button>
+            <button type="button" class="btn btn-link dislike-button"><i class="fas fa-heart-broken"></i></button>
+        </div>
+
+    <script src="{{ url_for('static', filename='js/cards.js') }}"></script>
+{% endblock %}

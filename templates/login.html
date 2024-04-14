@@ -3,15 +3,22 @@
 {% block title %}Вход{% endblock %}
 
 {% block content %}
-    <h2>Войти в профиль</h2>
-    <form action="/login" method="post" class="login-form">
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-
-        <label for="password">Введите пароль</label><br>
-        <input type="password" id="password" name="password" required><br>
-
-        <input type="submit" value="Войти"><br>
-        <a href="/reset" class="button">Восстановить пароль</a>
-    </form>
+<div class="container mt-5">
+    <div class="card-body">
+        <h5 class="card-title">Вход в профиль</h5>
+        <form method="post" action="">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control", placeholder="Email") }}
+            </div>
+            <div class="mb-3">
+                {{ form.password.label(class="form-label") }}
+                {{ form.password(class="form-control", placeholder="Password") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Войти</button>
+            <a href="/reset"><button type="button" class="btn btn-primary">Восстановить пароль</button></a>
+        </form>
+    </div>   
+</div>
 {% endblock %}
