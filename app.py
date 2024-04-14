@@ -56,7 +56,7 @@ def reset():
 def search_card():
     # Ваша логика для получения данных о карточках
     card = {
-        'image_url': '/path/to/image.jpg',
+        'image_url': 'static/img/.jpg',
         'title': 'Card Title',
         'content': 'Some quick example text to build on the card title and make up the bulk of the card\'s content.'
     }

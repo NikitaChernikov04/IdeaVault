@@ -1,20 +1,17 @@
-// cards.js
+var slideIndex = 1;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const likeButtons = document.querySelectorAll('.like-button');
-    const dislikeButtons = document.querySelectorAll('.dislike-button');
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
-    likeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Добавить логику для обработки лайка
-            console.log('Liked');
-        });
-    });
-
-    dislikeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Добавить логику для обработки дизлайка
-            console.log('Disliked');
-        });
-    });
-});
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("card");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
+showSlides(slideIndex);
