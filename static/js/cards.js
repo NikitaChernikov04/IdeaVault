@@ -15,3 +15,6 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
 }
 showSlides(slideIndex);
+
+document.querySelectorAll('.heart, .heart-button').forEach(button => button.addEventListener('click', e => button.classList.toggle('active')));
+

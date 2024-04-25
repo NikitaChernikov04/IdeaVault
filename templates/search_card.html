@@ -4,52 +4,41 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
+<div class="txt_con3">
+    {% block txt3 %}
+    <div class="txt3">
+        <h1>УЗНАТЬ ИДЕИ ДРУГИХ ПОЛЬЗОВАТЕЛЕЙ</h1>
+    </div>
+    {% endblock %}
+</div>
 <div class="wrapper">
     <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    {% for card in cards %}
     <div class="cards">
         <div class="card">
             <div class="face face1">
                 <div class="content">
-                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                    <h3>Design</h3>
+                    <img src="{{ card.image_url }}">
                 </div>
             </div>
             <div class="face face2">
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
-                    <h3>Code</h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                    <h3>Launch</h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                    <a href="#">Read More</a>
+                    <p>{{ card.content }}</p>
+                    <div class="donate"></div>
+                    <a href="#">Читать далее</a>
+                    <div class="butt">
+                        <div class="donate">
+                            <button class="li1">donate</button> 
+                        </div>
+                        <button class="heart">
+                            <div class="heart-flip"></div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    {% endfor %}
     <button class="next" onclick="plusSlides(1)">&#10095;</button>
 </div>
 <script src="{{ url_for('static', filename='js/cards.js') }}"></script>

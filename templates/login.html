@@ -3,21 +3,28 @@
 {% block title %}Вход{% endblock %}
 
 {% block content %}
+<div class="txt_con2">
+    {% block txt2 %}
+    <div class="txt2">
+        <h1>ВОЙДИ В СВОЙ ПРОФИЛЬ</h1>
+    </div>
+    {% endblock %}
+</div>
 <div class="container mt-5">
     <div class="card-body">
         <h5 class="card-title">Вход в профиль</h5>
         <form method="post" action="">
             {{ form.hidden_tag() }}
             <div class="mb-3">
-                {{ form.email.label(class="form-label") }}
-                {{ form.email(class="form-control", placeholder="Email") }}
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control", placeholder="Введите ваше имя") }}
             </div>
             <div class="mb-3">
                 {{ form.password.label(class="form-label") }}
                 {{ form.password(class="form-control", placeholder="Password") }}
             </div>
             <button type="submit" class="btn btn-primary">Войти</button>
-            <a href="/reset"><button type="button" class="btn btn-primary">Восстановить пароль</button></a>
+            <!-- <a href="/reset"><button type="button" class="btn btn-primary">Восстановить пароль</button></a> -->
         </form>
     </div>   
 </div>
