@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %}Приветствие{% endblock %}
+{% block title %}IdeaVault{% endblock %}
 
 {% block content %}
-<div class="buttons">
-    <a href="/create" class="btn btn-add-idea">Add Idea</a>
-    <a href="/search_card" class="btn btn-view-ideas">View Ideas</a>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<div class="main-info-container">
+    <!-- Контейнер для основной информации о сайте -->
+    {% block main_info %}
+    <div class="main-info">
+        <h1>Заголовок вашего сайта</h1>
+        <p>Ваше краткое описание здесь.</p>
+    </div>
+    <div class="m_buttons">
+        <a href="/create" class="btn btn-add-idea">Add Idea</a>
+        <a href="/search_card" class="btn btn-view-ideas">View Ideas</a>
+    </div>
+    {% endblock %}
 </div>
 {% endblock %}

@@ -1,0 +1,31 @@
+.main-info-container {
+    max-width: 1200px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.801), 0 10px 10px rgba(0, 0, 0, 0.5);
+    background: #161f6db4;
+    transform: translate3d(0px, 100px, 0) scale(1);
+    border-radius: 20px;
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    backdrop-filter: blur(30px);
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh; /* Минимальная высота контейнера (50% высоты страницы) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(25%, 0%);
+}
+
+.main-info {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Цвет текста */
+    z-index: 1; /* Установка z-index, чтобы контент был над видео */
+}
+
+.main_info h1 {
+    font-family: Andale Mono, monospace;
+}
