@@ -16,10 +16,6 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Log In')
 
 
-# class ResetPasswordForm(FlaskForm):
-#     email = StringField('Email', validators=[DataRequired(), Email()])
-#     submit = SubmitField('Восстановить пароль')
-
 
 class IdeaForm(FlaskForm):
     idea = TextAreaField('Idea', validators=[DataRequired()])
